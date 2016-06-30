@@ -1,36 +1,6 @@
-/*
-var rows = 8;
-var columns = 8;
-var $row = $("<div />",
-{
-    class: 'row'
-});
-var $cells = $("<div />", 
-{
-    class: 'cells'
-});
-
-$(document).ready(function () 
-{
-    //add columns to the the temp row object
-    for (var i = 0; i < columns; i++) 
-    {
-        $row.append($cells.clone());
-    }
-    //clone the temp row object with the columns to the wrapper
-    for (var i = 0; i < rows; i++) 
-    {
-        $("#main").append($row.clone());
-    }
-});
-*/
-
-
-
-
 $(document).ready(function ()
 {
-
+	/* Generades the grid */
 	$("#generateCells").click(function(e)
 	{
 		var height = document.getElementById("heightInput");
@@ -45,8 +15,7 @@ $(document).ready(function ()
 				class: 'cells'
 			});
 
-		$(".cells").remove();	//Removes previously made cells
-		$(".row").remove();		//
+		$(".row").remove();		//Removes previously made cells when generating new grid
 
 		for (var i = 0; i < width.value; i++)
 		{
@@ -58,8 +27,15 @@ $(document).ready(function ()
 			$("#main").append($row.clone());
 		}
 
+
 		e.preventDefault();		//Prevents the form from refreshing and resetting everything
 								//when submitted
+	});
+
+	/* Changes colors upon mouseover */
+	$(".cells").mouseenter(function()
+	{
+		
 	});
 });
 
