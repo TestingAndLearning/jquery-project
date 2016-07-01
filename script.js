@@ -30,18 +30,12 @@ $(document).ready(function ()
 
 		e.preventDefault();		//Prevents the form from refreshing and resetting everything
 								//when submitted
-	});
 
-	/* Changes colors upon mouseover */
-	$(".cells").mouseenter(function()
-	{
-		
+		/* Changes colors upon mouseover */
+		$(".cells").on("mouseenter", function()
+		{
+			$(this).css("background-color", "red");
+		});
 	});
 });
 
-/*
-	$(".cell").mouseenter(function()
-	{
-		$(this).fadeOut(1000);
-	});
-*/
