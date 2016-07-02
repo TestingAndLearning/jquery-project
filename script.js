@@ -2,7 +2,7 @@ $(document).ready(function ()
 {
 	//Default height and width of grid box
 	var res = 650;
-	
+
 	/* Generades the grid */
 	$("#generateCells").click(function(e)
 	{
@@ -48,7 +48,8 @@ $(document).ready(function ()
 		/* Changes colors upon mouseover */
 		$(".cells").on("mouseenter", function()
 		{
-			$(this).css("background-color", colorText);
+			$(this).css({"background-color": colorText, 
+						"opacity": "1"});
 		});
 	});
 
