@@ -1,12 +1,17 @@
 $(document).ready(function ()
 {
+	//Default height and width of grid box
+	var res = 650;
+	
 	/* Generades the grid */
 	$("#generateCells").click(function(e)
 	{
 		var height = document.getElementById("heightInput");
 		var width = document.getElementById("widthInput");
 		var color = document.getElementById("colorInput");
-		var colorText = color.options[color.selectedIndex].text;
+		var colorText = color.options[color.selectedIndex].text;	//Turns selected value from color
+																	//dropdown menu to text
+		//var res = 650;
 
 		var $row = $("<div />", 
 			{ 
@@ -31,8 +36,10 @@ $(document).ready(function ()
 		}
 
 		//Will change color/size of cells
-		/* $(".cells").css({"outline": "red solid 1px", 
-						"background-color": "red"}); */
+		 $(".cells").css({"height": (res/height.value), 
+						"width": (res/width.value)}); 
+
+		 $(".row").css({"height": (res/height.value)});
 
 
 		e.preventDefault();		//Prevents the form from refreshing and resetting everything
@@ -43,6 +50,19 @@ $(document).ready(function ()
 		{
 			$(this).css("background-color", colorText);
 		});
+	});
+
+	//Changes the total height and width of cells
+	$("#resButton").click(function(e)
+	{
+		do
+		{
+		res = prompt("Enter the total height and width (in pixels) of the entire grid", 650);
+		}
+		while(isNaN(res) || res < 1); //Continutes prompting if number entered is not a number or less than 1
+
+		document.getElementById("dim").innerHTML = "Dimensions: " + res + "x" + res; //Changes HTML text displaying current dimensions
+		e.preventDefault();
 	});
 });
 

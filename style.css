@@ -12,13 +12,13 @@
 	padding-left: 10px;
 }
 
-#height, #width, #generate, #colors
+#height, #width, #generate, #colors, #res
 {
 	display: inline-block;
 	margin-top: -5px;
 }
 
-#width, #generate, #colors
+#width, #generate, #colors, #res
 {
 	margin-left: 100px;
 }
