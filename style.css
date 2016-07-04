@@ -1,6 +1,7 @@
 body
 {
 	background-color: #EEE5DE;
+	min-width: 1500px;
 }
 
 #gridWrapper
